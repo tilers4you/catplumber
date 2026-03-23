@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
+/* ─── Design Tokens ──────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --color-deep-blue: #1b5e8a;
+  --color-copper: #d4782f;
+  --color-teal: #2ec4b6;
+  --color-charcoal: #2d3436;
+  --color-warm-gray: #f5f5f0;
+  --color-white: #ffffff;
+  --color-alert-red: #e74c3c;
+
+  /* Semantic aliases */
+  --color-primary: var(--color-deep-blue);
+  --color-accent: var(--color-copper);
+  --color-secondary: var(--color-teal);
+  --color-text: var(--color-charcoal);
+  --color-background: var(--color-warm-gray);
+  --color-surface: var(--color-white);
+  --color-danger: var(--color-alert-red);
+
+  /* Typography */
+  --font-sans: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Tailwind v4 Theme Extension ────────────────────────────────────────────── */
+
+@theme {
+  /* Brand Colors */
+  --color-deep-blue: #1b5e8a;
+  --color-copper: #d4782f;
+  --color-teal: #2ec4b6;
+  --color-charcoal: #2d3436;
+  --color-warm-gray: #f5f5f0;
+  --color-alert-red: #e74c3c;
+
+  /* Deep Blue shades */
+  --color-deep-blue-50: #e8f1f8;
+  --color-deep-blue-100: #c6d9ec;
+  --color-deep-blue-200: #9ebfde;
+  --color-deep-blue-300: #6ea4ce;
+  --color-deep-blue-400: #4a8dbf;
+  --color-deep-blue-500: #1b5e8a;
+  --color-deep-blue-600: #175279;
+  --color-deep-blue-700: #114265;
+  --color-deep-blue-800: #0b3251;
+  --color-deep-blue-900: #072540;
+
+  /* Copper shades */
+  --color-copper-50: #fdf3ea;
+  --color-copper-100: #f8ddc4;
+  --color-copper-200: #f2c49a;
+  --color-copper-300: #ebaa70;
+  --color-copper-400: #e69350;
+  --color-copper-500: #d4782f;
+  --color-copper-600: #bc6929;
+  --color-copper-700: #9d5522;
+  --color-copper-800: #7e431a;
+  --color-copper-900: #663512;
+
+  /* Teal shades */
+  --color-teal-50: #e9faf8;
+  --color-teal-100: #c4f1ec;
+  --color-teal-200: #95e6df;
+  --color-teal-300: #5ed9d0;
+  --color-teal-400: #2ec4b6;
+  --color-teal-500: #25a99d;
+  --color-teal-600: #1b8e84;
+  --color-teal-700: #13736a;
+  --color-teal-800: #0d5852;
+  --color-teal-900: #083e3a;
+
+  /* Fonts */
+  --font-sans: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base Styles ────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-warm-gray);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+a {
+  color: var(--color-deep-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-copper);
+}
+
+/* ─── Focus Visible ──────────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Utility: sr-only ───────────────────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
