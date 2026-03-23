@@ -293,7 +293,7 @@ export default function HomePage() {
             </ul>
 
             <div className="text-center mt-10">
-              <Button href="/services" variant="secondary" size="lg">
+              <Button href="/services" variant="secondary" size="lg" className="bg-transparent text-[#1B5E8A] border-[#1B5E8A] hover:bg-[#1B5E8A] hover:text-white">
                 View All Services
               </Button>
             </div>

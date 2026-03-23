@@ -34,7 +34,7 @@ export default function NotFound() {
         <Button href="/" variant="primary" size="lg">
           Back to Home
         </Button>
-        <Button href="/contact" variant="secondary" size="lg">
+        <Button href="/contact" variant="secondary" size="lg" className="bg-transparent text-[#1B5E8A] border-[#1B5E8A] hover:bg-[#1B5E8A] hover:text-white">
           Request a Quote
         </Button>
       </div>

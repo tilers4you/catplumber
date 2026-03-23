@@ -423,7 +423,7 @@ export default async function DIYGuidePage({ params }: PageProps) {
                       CatPlumber is available same-day throughout the Denver metro. Free quotes, no obligation.
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      <Button href="/contact" variant="secondary" size="sm">
+                      <Button href="/contact" variant="secondary" size="sm" className="bg-transparent text-[#1B5E8A] border-[#1B5E8A] hover:bg-[#1B5E8A] hover:text-white">
                         Get a Free Quote
                       </Button>
                       <Button

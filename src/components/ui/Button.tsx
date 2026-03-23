@@ -29,7 +29,7 @@ const variantClasses: Record<Variant, string> = {
   primary:
     "bg-[#D4782F] text-white border-2 border-[#D4782F] hover:bg-[#b8601f] hover:border-[#b8601f] focus-visible:outline-[#D4782F]",
   secondary:
-    "bg-transparent text-[#1B5E8A] border-2 border-[#1B5E8A] hover:bg-[#1B5E8A] hover:text-white focus-visible:outline-[#1B5E8A]",
+    "bg-white/10 text-white border-2 border-white/80 hover:bg-white hover:text-[#1B5E8A] focus-visible:outline-white",
   emergency:
     "bg-[#E74C3C] text-white border-2 border-[#E74C3C] hover:bg-[#c0392b] hover:border-[#c0392b] focus-visible:outline-[#E74C3C]",
 };

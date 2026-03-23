@@ -48,6 +48,17 @@ export function TextSplit({
     el.textContent = "";
     letters.forEach((span) => el.appendChild(span));
 
+    // Safety fallback: if GSAP hasn't made text visible within 3 seconds, force it
+    const safetyTimer = setTimeout(() => {
+      letters.forEach((span) => {
+        if (span.style.opacity === "0") {
+          span.style.opacity = "1";
+          span.style.transform = "translateY(0)";
+          span.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+        }
+      });
+    }, 3000);
+
     const animProps: gsap.TweenVars = {
       opacity: 1,
       y: 0,
@@ -55,6 +66,7 @@ export function TextSplit({
       stagger: 0.025,
       ease: "power3.out",
       delay,
+      onComplete: () => clearTimeout(safetyTimer),
     };
 
     let anim: gsap.core.Tween;
@@ -73,6 +85,7 @@ export function TextSplit({
     }
 
     return () => {
+      clearTimeout(safetyTimer);
       anim.kill();
       if (triggerOnScroll) {
         ScrollTrigger.getAll()

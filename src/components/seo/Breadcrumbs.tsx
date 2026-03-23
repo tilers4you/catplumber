@@ -27,7 +27,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
     <>
       <StructuredData data={schema} />
       <nav aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/70">
           {items.map((item, index) => {
             const isLast = index === items.length - 1;
             return (
@@ -35,7 +35,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 {isLast ? (
                   <span
                     aria-current="page"
-                    className="font-medium text-[#2D3436]"
+                    className="font-medium text-white"
                   >
                     {item.label}
                   </span>
@@ -43,12 +43,12 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   <>
                     <Link
                       href={item.href}
-                      className="hover:text-[#1B5E8A] transition-colors duration-150 underline-offset-2 hover:underline"
+                      className="hover:text-white transition-colors duration-150 underline-offset-2 hover:underline"
                     >
                       {item.label}
                     </Link>
                     <svg
-                      className="h-3.5 w-3.5 shrink-0 text-gray-400"
+                      className="h-3.5 w-3.5 shrink-0 text-white/50"
                       viewBox="0 0 16 16"
                       fill="currentColor"
                       aria-hidden="true"

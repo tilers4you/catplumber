@@ -50,7 +50,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
         >
           Try Again
         </Button>
-        <Button href="/" variant="secondary" size="lg">
+        <Button href="/" variant="secondary" size="lg" className="bg-transparent text-[#1B5E8A] border-[#1B5E8A] hover:bg-[#1B5E8A] hover:text-white">
           Back to Home
         </Button>
       </div>
