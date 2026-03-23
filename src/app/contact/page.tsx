@@ -11,6 +11,7 @@ import {
 } from "@/lib/constants";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { GoogleMap } from "@/components/maps/GoogleMap";
 
 export const metadata: Metadata = {
   title: `Contact ${BUSINESS_NAME} — Get a Free Quote`,
@@ -238,6 +239,13 @@ export default function ContactPage() {
                     ))}
                   </ul>
                 </div>
+
+                {/* Map */}
+                <GoogleMap
+                  address={ADDRESS}
+                  city="Englewood"
+                  className="h-56 w-full shadow-sm border border-gray-100"
+                />
               </div>
             </aside>
           </div>

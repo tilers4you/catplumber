@@ -7,6 +7,7 @@ import { Select } from "@/components/ui/Select";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
 import { SERVICES } from "@/lib/constants";
+import { FormSuccess } from "@/components/animations/FormSuccess";
 
 // ── Validation schema ────────────────────────────────────────────────────────
 
@@ -154,40 +155,7 @@ export function ContactForm() {
   // ── Success state ──────────────────────────────────────────────────────────
 
   if (status === "success") {
-    return (
-      <div
-        role="status"
-        aria-live="polite"
-        className="rounded-2xl bg-green-50 border border-green-200 p-8 text-center space-y-3"
-      >
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
-          <svg
-            className="h-7 w-7 text-green-600"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
-        <h2 className="text-xl font-bold text-green-800">Message Sent!</h2>
-        <p className="text-green-700 text-sm leading-relaxed">
-          Thanks for reaching out. We&apos;ll review your request and get back to
-          you within one business hour. For emergencies, call us directly at{" "}
-          <a
-            href="tel:+17207173990"
-            className="font-semibold underline underline-offset-2"
-          >
-            (720) 717-3990
-          </a>
-          .
-        </p>
-      </div>
-    );
+    return <FormSuccess show />;
   }
 
   // ── Form ───────────────────────────────────────────────────────────────────

@@ -190,6 +190,23 @@ export function generateFAQSchema(
   };
 }
 
+// ─── AggregateRating ──────────────────────────────────────────────────────────
+
+export function generateAggregateRatingSchema(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    itemReviewed: {
+      "@type": "Plumber",
+      "@id": `${SITE_URL}/#business`,
+      name: BUSINESS_NAME,
+    },
+    ratingValue: 4.9,
+    reviewCount: 127,
+    bestRating: 5,
+  };
+}
+
 // ─── Article ──────────────────────────────────────────────────────────────────
 
 export function generateArticleSchema(

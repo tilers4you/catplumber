@@ -14,6 +14,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
+import { GoogleMap } from "@/components/maps/GoogleMap";
 
 // ─── Area-specific content ────────────────────────────────────────────────────
 
@@ -25,7 +26,7 @@ interface AreaContent {
 }
 
 const AREA_CONTENT: Record<string, AreaContent> = {
-  englewood: {
+  "englewood-co": {
     intro:
       "Englewood is CatPlumber's home base — our shop is right here on Mount Spalding Lane, which means we can reach most Englewood addresses in under 20 minutes. We know Englewood's housing stock well, from the post-war ranch homes off South Broadway with their original copper supply lines to the newer townhomes along the South Platte River with PEX plumbing throughout.",
     detail:
@@ -46,7 +47,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  "highlands-ranch": {
+  "highlands-ranch-co": {
     intro:
       "Highlands Ranch is one of the largest planned communities in Colorado, and its homes reflect that consistent build quality — mostly 1990s and 2000s construction with standard PVC drain lines and CPVC or PEX supply plumbing. CatPlumber serves all Highlands Ranch neighborhoods including Backcountry, Firelight, and Westridge.",
     detail:
@@ -67,7 +68,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  centennial: {
+  "centennial-co": {
     intro:
       "Centennial is one of the newest cities in the United States, incorporated in 2001, but its housing stock spans decades — from the 1970s ranches near Arapahoe Road to recent luxury builds in the Willow Creek and Foxridge neighborhoods. CatPlumber serves all of Centennial with the same flat-rate pricing and same-day availability.",
     detail:
@@ -88,7 +89,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  "lone-tree": {
+  "lone-tree-co": {
     intro:
       "Lone Tree is a premium suburb with high-end housing stock and exacting standards — which is exactly the kind of work CatPlumber specializes in. From the estate homes in RidgeGate to the luxury townhomes near Park Meadows, our plumbers bring the precision and professionalism that Lone Tree residents expect.",
     detail:
@@ -109,7 +110,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  "greenwood-village": {
+  "greenwood-village-co": {
     intro:
       "Greenwood Village is home to some of the most distinctive properties in Arapahoe County — from the custom estates along Cherry Creek Reservoir to the executive homes in The Preserve. CatPlumber provides discreet, high-quality plumbing service for Greenwood Village homeowners who expect both expertise and professionalism.",
     detail:
@@ -130,7 +131,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  littleton: {
+  "littleton-co": {
     intro:
       "Littleton is one of the Denver metro's most beloved communities — a historic downtown, excellent schools, and a wide range of housing from the original Craftsman bungalows near Main Street to newer construction in Ken Caryl Valley. CatPlumber serves all Littleton neighborhoods including downtown, Sterne Park, Columbine Valley, and Ken Caryl.",
     detail:
@@ -151,7 +152,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  parker: {
+  "parker-co": {
     intro:
       "Parker has grown dramatically over the past two decades, transforming from a small ranching community into one of Douglas County's largest towns. Our Parker service area covers the established neighborhoods like Stroh Ranch and Stonegate through to newer developments like Anthology and Lincoln Creek.",
     detail:
@@ -172,7 +173,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  aurora: {
+  "aurora-co": {
     intro:
       "Aurora is the third-largest city in Colorado and has one of the most diverse housing stocks in the metro, ranging from post-WWII starter homes near Havana Street to luxury townhomes near Southlands mall. CatPlumber serves Aurora's south and west quadrants, covering neighborhoods like Saddle Rock, Tallyn's Reach, and Wheatlands.",
     detail:
@@ -193,7 +194,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  denver: {
+  "denver-co": {
     intro:
       "Denver proper is a large and varied market, and while our home base is in Englewood, we serve Denver neighborhoods throughout the south part of the city including Washington Park, Cherry Creek, Bonnie Brae, University Hills, Virginia Village, and Congress Park.",
     detail:
@@ -214,7 +215,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  "castle-pines": {
+  "castle-pines-co": {
     intro:
       "Castle Pines is an affluent community nestled in the pine forests of Douglas County, known for its estate homes, golf courses, and exceptional quality of life. CatPlumber provides the premium service level that Castle Pines homeowners expect — and our plumbers take extra care with the custom finishes, hardwood floors, and high-end fixtures common in the area.",
     detail:
@@ -235,7 +236,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  "castle-rock": {
+  "castle-rock-co": {
     intro:
       "Castle Rock is Douglas County's county seat and one of Colorado's fastest-growing cities. Situated between Denver and Colorado Springs, Castle Rock has seen explosive residential development, with neighborhoods like Crystal Valley, Cobblestone Ranch, and The Meadows adding thousands of homes over the past decade.",
     detail:
@@ -256,7 +257,7 @@ const AREA_CONTENT: Record<string, AreaContent> = {
       },
     ],
   },
-  foxfield: {
+  "foxfield-co": {
     intro:
       "Foxfield is a small, tight-knit town of about 700 homes situated between Centennial and Arapahoe Road. Despite its size, Foxfield has a distinct community identity and a mix of larger lot homes with mature landscaping — the kind of properties where plumbing problems can be more complex due to older pipes and expansive irrigation systems.",
     detail:
@@ -461,6 +462,12 @@ export default async function AreaPage({ params }: PageProps) {
                       : "Advance scheduling recommended"}
                   </p>
                 </Card>
+
+                <GoogleMap
+                  address={`${area.name}, Colorado`}
+                  city={area.name}
+                  className="h-48 w-full"
+                />
               </div>
             </div>
           </div>

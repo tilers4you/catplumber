@@ -29,18 +29,18 @@ export interface ServiceArea {
 }
 
 export const SERVICE_AREAS: ServiceArea[] = [
-  { name: "Englewood", slug: "englewood", distance: "0 mi", priority: 1 },
-  { name: "Highlands Ranch", slug: "highlands-ranch", distance: "3 mi", priority: 2 },
-  { name: "Centennial", slug: "centennial", distance: "4 mi", priority: 3 },
-  { name: "Lone Tree", slug: "lone-tree", distance: "5 mi", priority: 4 },
-  { name: "Greenwood Village", slug: "greenwood-village", distance: "6 mi", priority: 5 },
-  { name: "Littleton", slug: "littleton", distance: "6 mi", priority: 6 },
-  { name: "Parker", slug: "parker", distance: "12 mi", priority: 7 },
-  { name: "Aurora", slug: "aurora", distance: "14 mi", priority: 8 },
-  { name: "Denver", slug: "denver", distance: "15 mi", priority: 9 },
-  { name: "Castle Pines", slug: "castle-pines", distance: "15 mi", priority: 10 },
-  { name: "Castle Rock", slug: "castle-rock", distance: "20 mi", priority: 11 },
-  { name: "Foxfield", slug: "foxfield", distance: "8 mi", priority: 12 },
+  { name: "Englewood", slug: "englewood-co", distance: "0 mi", priority: 1 },
+  { name: "Highlands Ranch", slug: "highlands-ranch-co", distance: "3 mi", priority: 2 },
+  { name: "Centennial", slug: "centennial-co", distance: "4 mi", priority: 3 },
+  { name: "Lone Tree", slug: "lone-tree-co", distance: "5 mi", priority: 4 },
+  { name: "Greenwood Village", slug: "greenwood-village-co", distance: "6 mi", priority: 5 },
+  { name: "Littleton", slug: "littleton-co", distance: "6 mi", priority: 6 },
+  { name: "Parker", slug: "parker-co", distance: "12 mi", priority: 7 },
+  { name: "Aurora", slug: "aurora-co", distance: "14 mi", priority: 8 },
+  { name: "Denver", slug: "denver-co", distance: "15 mi", priority: 9 },
+  { name: "Castle Pines", slug: "castle-pines-co", distance: "15 mi", priority: 10 },
+  { name: "Castle Rock", slug: "castle-rock-co", distance: "20 mi", priority: 11 },
+  { name: "Foxfield", slug: "foxfield-co", distance: "8 mi", priority: 12 },
 ];
 
 export interface Service {

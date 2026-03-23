@@ -94,6 +94,26 @@
   --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
+/* ─── Animations ─────────────────────────────────────────────────────────────── */
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-confetti-fall {
+  animation: confetti-fall 0.9s ease-out forwards;
+}
+
 /* ─── Base Styles ────────────────────────────────────────────────────────────── */
 
 *,

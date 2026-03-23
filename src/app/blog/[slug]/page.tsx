@@ -9,6 +9,8 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { generateArticleSchema } from "@/lib/schema";
 import { BLOG_POSTS } from "../page";
 
+export const revalidate = 300;
+
 // ─── Post content ─────────────────────────────────────────────────────────────
 
 interface PostContent {

@@ -12,11 +12,15 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { generateLocalBusinessSchema } from "@/lib/schema";
+import { generateLocalBusinessSchema, generateAggregateRatingSchema } from "@/lib/schema";
+import { StructuredData } from "@/components/seo/StructuredData";
 import { HeroCanvas } from "@/components/three/HeroCanvas";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { TextSplit } from "@/components/animations/TextSplit";
 import { CountUp } from "@/components/animations/CountUp";
+import { PulseGlow } from "@/components/animations/PulseGlow";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: `Expert Plumbing Services in Denver, Colorado | ${BUSINESS_NAME}`,
@@ -106,6 +110,7 @@ function StarRating({ count }: { count: number }) {
 
 export default function HomePage() {
   const schema = generateLocalBusinessSchema();
+  const aggregateRatingSchema = generateAggregateRatingSchema();
 
   return (
     <>
@@ -113,6 +118,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <StructuredData data={aggregateRatingSchema} />
 
       <main>
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
@@ -161,9 +167,11 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button href="/contact" size="lg" variant="primary">
-                  Get a Free Quote
-                </Button>
+                <PulseGlow>
+                  <Button href="/contact" size="lg" variant="primary">
+                    Get a Free Quote
+                  </Button>
+                </PulseGlow>
                 <Button
                   href={PHONE_LINK}
                   size="lg"

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { BUSINESS_NAME, PHONE, SITE_URL } from "@/lib/constants";
+import { PageTransition } from "@/components/animations/PageTransition";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { StickyCallBar } from "@/components/layout/StickyCallBar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -91,7 +94,11 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#2D3436] font-[family-name:var(--font-inter)]">
-        {children}
+        <GoogleAnalytics />
+        <PageTransition className="flex flex-col min-h-full">
+          {children}
+        </PageTransition>
+        <StickyCallBar />
       </body>
     </html>
   );

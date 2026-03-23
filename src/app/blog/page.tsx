@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { StructuredData } from "@/components/seo/StructuredData";
 
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: `Plumbing Tips & Guides — Denver Homeowner Resources | ${BUSINESS_NAME}`,
   description:

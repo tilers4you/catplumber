@@ -30,6 +30,7 @@ export interface DIYGuide {
   timeEstimate: string;
   toolsNeeded: string[];
   category: string;
+  date?: string;
 }
 
 export const DIY_GUIDES: DIYGuide[] = [
